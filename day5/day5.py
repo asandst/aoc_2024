@@ -3,8 +3,8 @@ import re
 def isValid(m, row):
     for i, value in enumerate(row):
         if value in m:
-            before = m[value]
-            for b in before:
+            mustBeAfter = m[value]
+            for b in mustBeAfter:
                 if b in row and row.index(b) < i:
                     return (row.index(b), i)
     return True
